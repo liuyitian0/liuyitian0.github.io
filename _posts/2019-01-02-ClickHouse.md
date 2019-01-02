@@ -1,3 +1,6 @@
+ClickHouse 部署
+
+
 https://packagecloud.io/Altinity/clickhouse/ 
 https://packagecloud.io/Altinity/clickhouse?page=9
 
