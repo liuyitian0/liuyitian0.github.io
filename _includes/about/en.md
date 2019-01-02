@@ -1,6 +1,7 @@
 
 
-> Yet another man.
+> No regrets, no pestering, no waste
+> View at ease, look at the mountains
 
 
 Hi, I am *@Et* (裔天), a software engineer & a designer. I am currently working on [Reason](https://reasonml.github.io/) and [Messenger.com](http://messenger.com/) at [Facebook](https://www.facebook.com/). I previously worked as Web Front-End Engineer at [Alibaba Trip](https://www.alitrip.com/); Web Front-End Infrastructure Team Lead at [Wepiao.com](https://www.crunchbase.com/organization/wepiao#/entity); And [Invited Consultant on PWA]((https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509)) at [Ele.me](https://github.com/elemefe/).
