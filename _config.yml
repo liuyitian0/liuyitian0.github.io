@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     yitian
-zhihu_username:     yitian
-github_username:    yitian
-twitter_username:   yitian
+weibo_username:     刘裔天
+#zhihu_username:     yitian
+github_username:    liuyitian0
+#twitter_username:   yitian
 #facebook_username:  yitian
 #linkedin_username:  firstname-lastname-idxxxx
 
