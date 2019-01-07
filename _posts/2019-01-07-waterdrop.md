@@ -28,17 +28,18 @@ tags:
   9.   cp  hive-site.xml   到 spark conf 目录
        scp -P34222 root@ai-etl-c2-1:/etc/hive/conf/hive-sitm.xml   /opt/spark/spark2/conf/
  10.   修改 hive-site.xml  文件，增加修改     (host 文件要配置)
-<property>
-        <name>hive.metastore.local</name>
-        <value>false</value>
-</property>
-<property>
-        <name>hive.metastore.uris</name>
-         <value>thrift://ai-etl-c2-1:9083,thrift://ai-etl-c2-14:9083,thrift://ai-etl-c2-15:9083</value>
-</property>
-11    配置 waterdrop-env.sh
+
+>        <property>
+>           <name>hive.metastore.local</name>
+>           <value>false</value>
+>        </property>
+>        <property>
+>           <name>hive.metastore.uris</name>
+>           <value>thrift://ai-etl-c2-1:9083,thrift://ai-etl-c2-14:9083,thrift://ai-etl-c2-15:9083</value>
+>        </property>
+11.    配置 waterdrop-env.sh
         SPARK_HOME=${SPARK_HOME:-/opt/spark/spark2}
-12 配置application.conf
+12.   配置application.conf
     spark {
         # Waterdrop defined streaming batch duration in seconds
         spark.streaming.batchDuration = 5
