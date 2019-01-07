@@ -41,7 +41,7 @@ tags:
 
  9. cp  hive-site.xml   到 spark conf 目录
 
->   scp -P34222 root@hostname1:/etc/hive/conf/hive-sitm.xml   /opt/spark/spark2/conf/
+> scp -P34222 root@hostname1:/etc/hive/conf/hive-sitm.xml   /opt/spark/spark2/conf/
 
  10. 修改hive-site.xml 文件增加修改(host 文件要配置)
 
@@ -55,9 +55,11 @@ tags:
 >        </property>
 
  11. 配置 waterdrop-env.sh
->        SPARK_HOME=${SPARK_HOME:-/opt/spark/spark2}
+
+>    SPARK_HOME=${SPARK_HOME:-/opt/spark/spark2}
 
  12. 配置application.conf
+
 >    spark {
 >        --  Waterdrop defined streaming batch duration in seconds
 >        spark.streaming.batchDuration = 5
@@ -81,4 +83,5 @@ tags:
 >      }
 
  13. 启动 waterdrop
+
 >  /bin/start-waterdrop.sh --master yarn --deploy-mode client --config ./config/application.conf 
