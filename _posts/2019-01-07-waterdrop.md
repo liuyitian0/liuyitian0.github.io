@@ -49,20 +49,20 @@ tags:
 
 9.  修改hive-site.xml 文件增加修改(host 文件要配置)
 
->        <property>
->           <name>hive.metastore.local</name>
->           <value>false</value>
->        </property>
->        <property>
->           <name>hive.metastore.uris</name>
->           <value>thrift://hostname1:9083,thrift://hostname2:9083</value>
->        </property>
+>       <property>
+>         <name>hive.metastore.local</name>
+>         <value>false</value>
+>       </property>
+>       <property>
+>         <name>hive.metastore.uris</name>
+>         <value>thrift://hostname1:9083,thrift://hostname2:9083</value>
+>       </property>
 
-10.  配置 waterdrop-env.sh
+10  配置 waterdrop-env.sh
 
 >      SPARK_HOME=${SPARK_HOME:-/opt/spark/spark2}
 
-11.  配置application.conf
+11  配置application.conf
 
 >      spark {
 >        # Waterdrop defined streaming batch duration in seconds
@@ -86,6 +86,6 @@ tags:
 >        stdout {}
 >      }
 
-12.  启动 waterdrop
+12  启动 waterdrop
 
 >      ./bin/start-waterdrop.sh --master yarn --deploy-mode client --config ./config/application.conf 
