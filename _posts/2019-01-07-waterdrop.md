@@ -53,7 +53,7 @@ tags:
 
  12.   配置application.conf
 >    spark {
->        # Waterdrop defined streaming batch duration in seconds
+>        \# Waterdrop defined streaming batch duration in seconds
 >        spark.streaming.batchDuration = 5
 >        spark.app.name = "Waterdrop"
 >        spark.ui.port = 13000
