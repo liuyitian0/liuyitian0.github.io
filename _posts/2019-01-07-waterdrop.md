@@ -9,3 +9,56 @@ tags:
   - DW
   - 数仓
 ---
+
+> waterdrop  安装部署
+
+
+ 1.   mkdir -p  /opt/waterdrop
+ 2.   wget https://github.com/InterestingLab/waterdrop/releases/download/v1.1.2/waterdrop-1.1.2.zip -O waterdrop-1.1.2.zip
+   3.   unzip waterdrop-1.1.2.zip 
+   4.   ln -s  unzip waterdrop-1.1.2  waterdrop
+   5.   wget http://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.6.tgz
+   6.    ln -s spark-2.2.0-bin-hadoop2.6 spark2
+   7.  scp -P34222 root@ai-etl-c2-25:/opt/jdk-8u144-linux-x64.tar.gz  ./                         ----cp jdk；配置 javahome
+   8.   tar -zxvf jdk-8u144-linux-x64.tar.gz  -C  /usr/local/
+         vim /etc/profile
+      export JAVA_HOME=/usr/local/jdk1.8.0_144
+      export PATH=$JAVA_HOME/bin:$PATH
+      export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+  9.   cp  hive-site.xml   到 spark conf 目录
+       scp -P34222 root@ai-etl-c2-1:/etc/hive/conf/hive-sitm.xml   /opt/spark/spark2/conf/
+ 10.   修改 hive-site.xml  文件，增加修改     (host 文件要配置)
+<property>
+        <name>hive.metastore.local</name>
+        <value>false</value>
+</property>
+<property>
+        <name>hive.metastore.uris</name>
+         <value>thrift://ai-etl-c2-1:9083,thrift://ai-etl-c2-14:9083,thrift://ai-etl-c2-15:9083</value>
+</property>
+11    配置 waterdrop-env.sh
+        SPARK_HOME=${SPARK_HOME:-/opt/spark/spark2}
+12 配置application.conf
+    spark {
+        # Waterdrop defined streaming batch duration in seconds
+        spark.streaming.batchDuration = 5
+
+        spark.app.name = "Waterdrop"
+        spark.ui.port = 13000
+}
+
+input {
+        socketStream {}
+}
+
+filter {
+        split {
+                fields = ["msg", "name"]
+                delimiter = ","
+        }
+}
+
+output {
+        stdout {}
+}
+13.   ./bin/start-waterdrop.sh --master yarn --deploy-mode client --config ./config/application.conf 
