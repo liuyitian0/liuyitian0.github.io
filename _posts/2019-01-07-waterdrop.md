@@ -18,7 +18,7 @@ tags:
 
    
 1.  创建目录
-> mkdir -p  /opt/waterdrop
+>    mkdir -p  /opt/waterdrop
 
 2.  下载waterdrop 压缩包
 > wget https://github.com/InterestingLab/waterdrop/releases/download/v1.1.2/waterdrop-1.1.2.zip -O waterdrop-1.1.2.zip
