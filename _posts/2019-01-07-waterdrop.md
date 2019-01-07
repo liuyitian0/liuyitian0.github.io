@@ -14,21 +14,25 @@ tags:
 
 > waterdrop  安装部署
 
-<br><br><br>
-
+<br>
 
    
-  创建目录 
->     mkdir -p  /opt/waterdrop
+  创建目录
+> mkdir -p  /opt/waterdrop
 
- 2.  下载waterdrop 压缩包 
->     wget https://github.com/InterestingLab/waterdrop/releases/download/v1.1.2/waterdrop-1.1.2.zip -O waterdrop-1.1.2.zip
+  下载waterdrop 压缩包
+> wget https://github.com/InterestingLab/waterdrop/releases/download/v1.1.2/waterdrop-1.1.2.zip -O waterdrop-1.1.2.zip
 
- 3.   unzip waterdrop-1.1.2.zip 
+  解压zip 
+> unzip waterdrop-1.1.2.zip 
 
- 4.   ln -s  unzip waterdrop-1.1.2  waterdrop
- 5.   wget http://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.6.tgz
- 6.    ln -s spark-2.2.0-bin-hadoop2.6 spark2
+  创建软连接
+> ln -s  unzip waterdrop-1.1.2  waterdrop
+
+  下载spark2,并创建软连接 
+>  wget http://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.6.tgz 
+>  ln -s spark-2.2.0-bin-hadoop2.6 spark2
+
  7.  scp -P34222 root@ai-etl-c2-25:/opt/jdk-8u144-linux-x64.tar.gz  ./  
      ----cp jdk；配置 javahome
 
