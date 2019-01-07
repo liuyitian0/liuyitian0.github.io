@@ -18,7 +18,7 @@ tags:
 
 
    
- 1.  创建目录 
+  创建目录 
 >     mkdir -p  /opt/waterdrop
 
  2.  下载waterdrop 压缩包 
