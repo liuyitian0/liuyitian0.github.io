@@ -26,28 +26,28 @@ tags:
 3.  解压zip 
 >      unzip waterdrop-1.1.2.zip 
 
-  创建软连接
-> ln -s  unzip waterdrop-1.1.2  waterdrop
+4.  创建软连接
+>      ln -s  unzip waterdrop-1.1.2  waterdrop
 
-  下载spark2,并创建软连接 
->  wget http://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.6.tgz 
->  ln -s spark-2.2.0-bin-hadoop2.6 spark2
+5.  下载spark2,并创建软连接 
+>      wget http://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.6.tgz 
+>      ln -s spark-2.2.0-bin-hadoop2.6 spark2
 
- 7.  scp -P34222 root@ai-etl-c2-25:/opt/jdk-8u144-linux-x64.tar.gz  ./  
-     ----cp jdk；配置 javahome
+6.  下载jdk(我说直接从其他机器cp 过来的)
+>      scp -P22 root@hostname1:/opt/jdk-8u144-linux-x64.tar.gz  ./  
+     
 
- 8.  配置java Home  
+7.  配置java Home  
 >      tar -zxvf jdk-8u144-linux-x64.tar.gz  -C  /usr/local/
 >      vim /etc/profile
 >      export JAVA_HOME=/usr/local/jdk1.8.0_144
 >      export PATH=$JAVA_HOME/bin:$PATH
 >      export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
- 9. cp  hive-site.xml   到 spark conf 目录
+8.  把hive配置文件复制到spark的配置目录
+>      scp -P34222 root@hostname1:/etc/hive/conf/hive-sitm.xml   /opt/spark/spark2/conf/
 
-> scp -P34222 root@hostname1:/etc/hive/conf/hive-sitm.xml   /opt/spark/spark2/conf/
-
- 10. 修改hive-site.xml 文件增加修改(host 文件要配置)
+9.  修改hive-site.xml 文件增加修改(host 文件要配置)
 
 >        <property>
 >           <name>hive.metastore.local</name>
@@ -58,34 +58,34 @@ tags:
 >           <value>thrift://hostname1:9083,thrift://hostname2:9083</value>
 >        </property>
 
- 11. 配置 waterdrop-env.sh
+10.  配置 waterdrop-env.sh
 
->    SPARK_HOME=${SPARK_HOME:-/opt/spark/spark2}
+>      SPARK_HOME=${SPARK_HOME:-/opt/spark/spark2}
 
- 12. 配置application.conf
+11.  配置application.conf
 
->    spark {
->        --  Waterdrop defined streaming batch duration in seconds
+>      spark {
+>        # Waterdrop defined streaming batch duration in seconds
 >        spark.streaming.batchDuration = 5
 >        spark.app.name = "Waterdrop"
 >        spark.ui.port = 13000
 >         }
->
->     input {
+>      
+>      input {
 >        socketStream {}
->      }
->
->     filter {
+>       }
+>      
+>      filter {
 >             split {
 >                fields = ["msg", "name"]
 >                delimiter = ","
->        }
->      }
+>                  }
+>       }
 >
->     output {
+>      output {
 >        stdout {}
 >      }
 
- 13. 启动 waterdrop
+12.  启动 waterdrop
 
->  /bin/start-waterdrop.sh --master yarn --deploy-mode client --config ./config/application.conf 
+>      ./bin/start-waterdrop.sh --master yarn --deploy-mode client --config ./config/application.conf 
