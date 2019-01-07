@@ -33,7 +33,7 @@ tags:
 >      wget http://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.6.tgz 
 >      ln -s spark-2.2.0-bin-hadoop2.6 spark2
 
-6.  下载jdk(我说直接从其他机器cp 过来的)
+6.  下载jdk(我是直接从其他机器cp 过来的)
 >      scp -P22 root@hostname1:/opt/jdk-8u144-linux-x64.tar.gz  ./  
      
 
