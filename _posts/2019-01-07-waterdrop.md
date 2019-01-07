@@ -86,6 +86,6 @@ tags:
 >        stdout {}
 >      }
 
-12  启动 waterdrop
+<12>  启动 waterdrop
 
 >      ./bin/start-waterdrop.sh --master yarn --deploy-mode client --config ./config/application.conf 
