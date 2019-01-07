@@ -24,7 +24,8 @@ tags:
  4.   ln -s  unzip waterdrop-1.1.2  waterdrop
  5.   wget http://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.6.tgz
  6.    ln -s spark-2.2.0-bin-hadoop2.6 spark2
- 7.  scp -P34222 root@ai-etl-c2-25:/opt/jdk-8u144-linux-x64.tar.gz  ./                         ----cp jdk；配置 javahome
+ 7.  scp -P34222 root@ai-etl-c2-25:/opt/jdk-8u144-linux-x64.tar.gz  ./  
+     ----cp jdk；配置 javahome
 
  8.  配置java Home  
 >      tar -zxvf jdk-8u144-linux-x64.tar.gz  -C  /usr/local/
@@ -33,9 +34,9 @@ tags:
 >      export PATH=$JAVA_HOME/bin:$PATH
 >      export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
- 9.   cp  hive-site.xml   到 spark conf 目录
+ 9. cp  hive-site.xml   到 spark conf 目录
 
-> scp -P34222 root@ai-etl-c2-1:/etc/hive/conf/hive-sitm.xml   /opt/spark/spark2/conf/
+>   scp -P34222 root@ai-etl-c2-1:/etc/hive/conf/hive-sitm.xml   /opt/spark/spark2/conf/
 
  10.   修改 hive-site.xml  文件增加修改 (host 文件要配置)
 
@@ -53,7 +54,7 @@ tags:
 
  12.   配置application.conf
 >    spark {
->        \# Waterdrop defined streaming batch duration in seconds
+>        ## Waterdrop defined streaming batch duration in seconds
 >        spark.streaming.batchDuration = 5
 >        spark.app.name = "Waterdrop"
 >        spark.ui.port = 13000
