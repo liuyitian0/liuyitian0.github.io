@@ -3,7 +3,7 @@ layout: post
 title: "HBase 二级索引"
 subtitle: "hbase  二级索引参数调整"
 author: "et"
-header-img: "img/post-bg-waterdrop.jpg"
+header-img: "img/post-bg-hbase-index.jpg"
 header-mask: 0.4
 tags:
   - HBase
