@@ -30,7 +30,7 @@ tags:
 
     -- 初始化环境(如果安装指定版本的ck,这个初始化应该是不用做的,这个没有测试)
 
-       curl -s https://packagecloud.io/install/repositories/altinity/clickhouse/script.rpm.sh | sudo bash
+       curl -s https://packagecloud.io/install/repositories/altinity/clickhouse/script.rpm.sh \| sudo bash
 
     -- 安装指定版本的
 
