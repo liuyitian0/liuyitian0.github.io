@@ -17,23 +17,23 @@ tags:
 <br>
 
 
-1.  下载rpm 包:
-
-       wget https://packagecloud.io/Altinity/clickhouse/packages/el/7/clickhouse-server-common-1.1.54383-1.el7.x86_64.rpm \n
+1.  下载rpm 包
+<br>
+       wget https://packagecloud.io/Altinity/clickhouse/packages/el/7/clickhouse-server-common-1.1.54383-1.el7.x86_64.rpm
        wget https://packagecloud.io/Altinity/clickhouse/packages/el/7/clickhouse-common-static-1.1.54383-1.el7.x86_64.rpm
        wget https://packagecloud.io/Altinity/clickhouse/packages/el/7/clickhouse-server-1.1.54383-1.el7.x86_64.rpm
        wget https://packagecloud.io/Altinity/clickhouse/packages/el/7/clickhouse-debuginfo-1.1.54383-1.el7.x86_64.rpm
        wget https://packagecloud.io/Altinity/clickhouse/packages/el/7/clickhouse-test-1.1.54383-1.el7.x86_64.rpm
        wget https://packagecloud.io/Altinity/clickhouse/packages/el/7/clickhouse-client-1.1.54383-1.el7.x86_64.rpm
-
+<br><br>
 2.  顺序安装
 
     -- 初始化环境(如果安装指定版本的ck,这个初始化应该是不用做的,这个没有测试)
-
+<br>
        curl -s https://packagecloud.io/install/repositories/altinity/clickhouse/script.rpm.sh \| sudo bash
-
+<br>
     -- 安装指定版本的
-
+<br>
        sudo yum install clickhouse-server-common-1.1.54383-1.el7.x86_64
        sudo yum install clickhouse-common-static-1.1.54383-1.el7.x86_64
        sudo yum install clickhouse-server-1.1.54383-1.el7.x86_64
@@ -42,7 +42,7 @@ tags:
        sudo yum install clickhouse-client-1.1.54383-1.el7.x86_64
 
 
-<br><br><br>
+<br><br>
 
 -- 参考资料 
 
