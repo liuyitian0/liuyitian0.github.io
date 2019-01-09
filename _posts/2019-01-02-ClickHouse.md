@@ -46,6 +46,116 @@ tags:
 
 <br><br>
 
+
+
+>  另一种方式
+
+        curl -s https://packagecloud.io/install/repositories/altinity/clickhouse/script.rpm.sh | sudo bash 
+        
+        
+        sudo yum -y install clickhouse-server-common-1.1.54383-1.el7.x86_64
+        sudo yum -y install clickhouse-common-static-1.1.54383-1.el7.x86_64
+        sudo yum -y install clickhouse-server-1.1.54383-1.el7.x86_64
+        sudo yum -y install clickhouse-debuginfo-1.1.54383-1.el7.x86_64
+        sudo yum -y install clickhouse-test-1.1.54383-1.el7.x86_64
+        sudo yum -y install clickhouse-client-1.1.54383-1.el7.x86_64
+        
+        sudo yum list installed 'clickhouse*'  
+        
+        
+        
+         mkdir -p /data1/clickhouseTmp
+         mkdir -p /data1/clickhouseData
+        
+        
+         <tcp_port>9999</tcp_port>
+         <listen_host>10.3.8.48</listen_host>
+         <path>/data1/clickhouseData/</path>
+         <tmp_path>/data1/clickhouseTmp/</tmp_path>
+        
+         service clickhouse-server start
+         service clickhouse-server stop
+        
+        
+        
+        vim /etc/clickhouse-server/metrika.xml
+        
+        
+        <yandex>
+        <!-- 集群配置 -->
+        <clickhouse_remote_servers>
+            <!-- 3分片1备份 -->
+            <cluster_3shards_2replicas>
+                <!-- 数据分片1  -->
+                <shard>
+                	<weight>1</weight>
+                    <internal_replication>true</internal_replication>
+                    <replica>
+                        <host>test-ai-etl-c1-1</host>
+                        <port>9999</port>
+                    </replica>
+                </shard>
+                <!-- 数据分片2  -->
+                <shard>
+                	<!--weight是分片权重,数据写入该分片的概率-->
+                	<weight>1</weight>
+                	<!-- 表示是否只将数据写入其中一个副本，默认为false，表示写入所有副本，在复制表的情况下可能会导致重复和不一致，所以这里一定要改为true -->
+                    <internal_replication>true</internal_replication>
+                    <replica>
+                        <host>test-ai-etl-c1-2</host>
+                        <port> 9999</port>
+                    </replica>
+                </shard>
+                <!-- 数据分片3  -->
+                <shard>
+                    <weight>1</weight>
+                    <internal_replication>true</internal_replication>
+                    <replica>
+                        <host>test-ai-etl-c1-3</host>
+                        <port>9999/port>
+                    </replica>
+                </shard>
+            </cluster_3shards_2replicas>
+        </clickhouse_remote_servers>
+        
+        
+        <!-- zookeeper的配置 -->
+        <zookeeper-servers>
+          <node index="1">
+            <host>test-ai-etl-c1-1</host>
+            <port>2181</port>
+          </node>
+            <node index="2">
+            <host>test-ai-etl-c1-2</host>
+            <port>2181</port>
+          </node>
+            <node index="3">
+            <host>test-ai-etl-c1-3</host>
+            <port>2181</port>
+          </node>
+            </node>
+            <node index="4">
+            <host>test-ai-etl-c1-4</host>
+            <port>2181</port>
+          </node>
+            </node>
+            <node index="5">
+            <host>test-ai-etl-c1-5</host>
+            <port>2181</port>
+          </node>
+        </zookeeper-servers>
+        
+        
+        <!-- -->
+        <macros>
+            <replica>test-ai-etl-c1-3</replica>
+        </macros>
+        
+        </yandex>
+
+
+
+
 -- 参考资料 
 
        https://packagecloud.io/Altinity/clickhouse/ 
