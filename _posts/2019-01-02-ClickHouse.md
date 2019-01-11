@@ -138,6 +138,16 @@ tags:
         </yandex>
 
 <br><br>
+
+--- 卸载
+
+        yum -y remove clickhouse-debuginfo-1.1.54383-1.el7.x86_64
+        yum -y remove clickhouse-server-common-1.1.54383-1.el7.x86_64
+        yum -y remove clickhouse-common-static-1.1.54383-1.el7.x86_64
+        yum -y remove clickhouse-server-1.1.54383-1.el7.x86_64
+        yum -y remove clickhouse-test-1.1.54383-1.el7.x86_64
+        yum -y remove clickhouse-client-1.1.54383-1.el7.x86_64
+
 ---- 安装新版 18.16  centos 7
 
         curl -s https://packagecloud.io/install/repositories/altinity/clickhouse/script.rpm.sh | sudo bash 
