@@ -91,7 +91,7 @@ tags:
                 	<weight>1</weight>
                     <internal_replication>true</internal_replication>
                     <replica>
-                        <host>test-ai-etl-c1-1</host>
+                        <host>hostname1</host>
                         <port>9999</port>
                     </replica>
                 </shard>
@@ -102,7 +102,7 @@ tags:
                 	<!-- 表示是否只将数据写入其中一个副本，默认为false，表示写入所有副本，在复制表的情况下可能会导致重复和不一致，所以这里一定要改为true -->
                     <internal_replication>true</internal_replication>
                     <replica>
-                        <host>test-ai-etl-c1-2</host>
+                        <host>hostname2</host>
                         <port> 9999</port>
                     </replica>
                 </shard>
@@ -111,7 +111,7 @@ tags:
                     <weight>1</weight>
                     <internal_replication>true</internal_replication>
                     <replica>
-                        <host>test-ai-etl-c1-3</host>
+                        <host>hostname3</host>
                         <port>9999/port>
                     </replica>
                 </shard>
@@ -122,34 +122,18 @@ tags:
         <!-- zookeeper的配置 -->
         <zookeeper-servers>
           <node index="1">
-            <host>test-ai-etl-c1-1</host>
+            <host>hostname1</host>
             <port>2181</port>
           </node>
             <node index="2">
-            <host>test-ai-etl-c1-2</host>
+            <host>hostname2</host>
             <port>2181</port>
           </node>
             <node index="3">
-            <host>test-ai-etl-c1-3</host>
-            <port>2181</port>
-          </node>
-            </node>
-            <node index="4">
-            <host>test-ai-etl-c1-4</host>
-            <port>2181</port>
-          </node>
-            </node>
-            <node index="5">
-            <host>test-ai-etl-c1-5</host>
+            <host>hostname3</host>
             <port>2181</port>
           </node>
         </zookeeper-servers>
-        
-        
-        <!-- -->
-        <macros>
-            <replica>test-ai-etl-c1-3</replica>
-        </macros>
         
         </yandex>
 
