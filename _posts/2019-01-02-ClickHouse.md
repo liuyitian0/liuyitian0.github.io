@@ -137,7 +137,17 @@ tags:
         
         </yandex>
 
+<br><br>
+---- 安装新版 18.16  centos 7
 
+        curl -s https://packagecloud.io/install/repositories/altinity/clickhouse/script.rpm.sh | sudo bash 
+        
+        sudo yum -y install clickhouse-server-common-18.16.1-1.el7.x86_64
+        sudo yum -y install clickhouse-common-static-18.16.1-1.el7.x86_64
+        sudo yum -y install clickhouse-server-18.16.1-1.el7.x86_64
+        sudo yum -y install clickhouse-debuginfo-1.1.54383-1.el7.x86_64
+        sudo yum -y install clickhouse-test-18.16.1-1.el7.x86_64
+        sudo yum -y install clickhouse-client-18.16.1-1.el7.x86_64
 
 
 -- 参考资料 
