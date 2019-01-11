@@ -69,7 +69,7 @@ tags:
         
         
          <tcp_port>9999</tcp_port>
-         <listen_host>10.3.8.48</listen_host>
+         <listen_host>xx.xx.xx.xx</listen_host>
          <path>/data1/clickhouseData/</path>
          <tmp_path>/data1/clickhouseTmp/</tmp_path>
         
