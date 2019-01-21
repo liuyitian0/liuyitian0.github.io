@@ -1,0 +1,24 @@
+## CDH 部署spark 2.2
+
+---
+
+layout: post
+title: "CDH 部署 Spark 2.2 "
+subtitle: "Spark 2.2"
+author: "et"
+header-img: "img/post-bg-hbase-index.jpg"
+header-mask: 0.4
+tags:
+  --- Spark
+  --- CDH
+  --- 大数据
+  
+---
+
+<br>
+
+1.  下载 csd 包：http://archive.cloudera.com/spark2/csd/
+
+
+    下载 parcels 包： http://archive.cloudera.com/spark2/parcels/
+
