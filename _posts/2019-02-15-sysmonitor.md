@@ -11,10 +11,8 @@ tags:
 ---
 
 
->  方式一 
+>  方式一, 简单粗暴,利用系统命令Top      
 
-
-<br>
 
        #! /usr/bin/env python
        #coding:utf-8
@@ -59,7 +57,8 @@ tags:
 
 
 
->  方式二  ,通过 aha 生成html 当时镜像图，要先安装 aha 
+>  方式二  ,通过 aha 生成html 当时镜像图，要先安装 aha   
+
        yum install aha   
 
        #! /usr/bin/env python
