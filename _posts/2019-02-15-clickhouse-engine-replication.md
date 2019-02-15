@@ -11,13 +11,9 @@ tags:
 
 
 >  目前使用 3台集群部署了 click house集群.    
-
 >  node1 / node2 / node3    
-
->  配置方式采用了  remote_servers   独立文件配置的方式，独立成  metrika.xml   
- 
+>  配置方式采用了  remote_servers   独立文件配置的方式，独立成  metrika.xml    
 >  目前 metrika.xml 的 配置了  clickhouse_remote_servers  /  zookeeper-servers /  macros    
-
 >  具体如下:   
 
        <yandex>
@@ -58,7 +54,7 @@ tags:
        </yandex>   
 
 
-|| 把metrika.xml同步到各节点,然后重启各节点   
+| 把metrika.xml同步到各节点,然后重启各节点   
 
 >  场景一    测试
 >  目前采用了  3个 分片 1个副本的方式  ,测试用表 如下:    
@@ -80,7 +76,7 @@ tags:
        insert into test (dt,id,name) values('2019-01-10',1002,'aaa');    
        insert into test (dt,id,name) values('2019-01-10',1003,'aaa');    
        insert into test (dt,id,name) values('2019-01-10',1004,'aaa');    
-       insert into test (dt,id,name)values('2019-01-10',1005,'aaa');    
+       insert into test (dt,id,name) values('2019-01-10',1005,'aaa');    
 
 --- 创建分布式试图表,一定要把所有的分布本地表创建完成后在创建路由表(试图表/总表),不然本地表没有数据    
  
