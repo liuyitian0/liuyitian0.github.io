@@ -58,13 +58,14 @@ tags:
        </yandex>   
 
 
-# 把metrika.xml同步到各节点,然后重启各节点   
+|| 把metrika.xml同步到各节点,然后重启各节点   
 
 >  场景一    测试
 >  目前采用了  3个 分片 1个副本的方式  ,测试用表 如下:    
 >    准备采用    MergeTree + Distributed + 集群复制  的方式    
 
 ----- 创建测试表    
+
        create table default.test \    
        (dt Date,id UInt8,name String) \    
        ENGINE = MergeTree(dt, (id, dt), 8192);    
@@ -74,6 +75,7 @@ tags:
        ENGINE = MergeTree(dt, (id, dt), 8192);      
 
 ------ 插入测试数据     
+
        insert into test (dt,id,name) values('2019-01-10',1001,'aaa');    
        insert into test (dt,id,name) values('2019-01-10',1002,'aaa');    
        insert into test (dt,id,name) values('2019-01-10',1003,'aaa');    
@@ -90,14 +92,4 @@ tags:
        INSERT INTO test_all SELECT * FROM test;    
        select * from  test_all;    
 
-
-
-
-
-
-
-
-
-
-
-![](/img/in-post/post-nextgen-web-pwa/PWAR-007.jpeg)
+![](/img/in-post/clickhouse-engine-replication.jpg)
