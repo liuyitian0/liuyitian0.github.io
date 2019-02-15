@@ -3,14 +3,15 @@
 > View at ease, look at the mountains
 
 
-Hi, I am *@Et* (裔天) 
+Hi, I am Et,   and I often appear in [blog] and [microblog] .
+My WeChat:    
 
 
-##### Talks
+##### Study Plan
 
-- A
-- B 
-- C 
+- Flink dev 
+- Hbase tuning
+- DW modeling 
 - D 
 - E 
 - F 
