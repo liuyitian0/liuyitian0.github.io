@@ -13,4 +13,4 @@ tags:
 >   引用图片   
 
 
-![avatar](img/in-post/post-kuaidi-1.jpg)
+![示例图1](https://github.com/liuyitian0/liuyitian0.github.io/blob/master/img/in-post/post-kuaidi-1.jpg)
