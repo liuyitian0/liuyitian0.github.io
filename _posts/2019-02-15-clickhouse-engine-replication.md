@@ -91,4 +91,16 @@ tags:
 ![](/img/in-post/clickhouse-engine-replication.jpg)    
   在第一台机器上查 本地表:    
 ![](/img/in-post/clickhouse-engine-replication-1.jpg)    
+  在第二台上 查询 本地表:    
+![](/img/in-post/clickhouse-engine-replication-2.jpg)    
+  在第三台上 查询 本地表:    
+![](/img/in-post/clickhouse-engine-replication-3.jpg)    
+  对于分布式表来说 ，只要有一个分片节点不可用 整个 分布式表，就是带 _all 的 路由表 就是不可用的，下面是把第三个分片停掉后，在查询 路由表 报错    
+![](/img/in-post/clickhouse-engine-replication-4.jpg)    
+
+
+
+>  场景二   测试    
+>  目前采用了  1分片 2 个副本的集群方式  ，配置如下:    
+>  在第一台和第三台上:    
 
