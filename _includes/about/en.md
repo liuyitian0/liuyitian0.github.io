@@ -5,7 +5,7 @@
 
 Hi, I am Et,   and I often appear in [blog] and [microblog] .
 My WeChat:    
-
+![](/img/my-wechat.jpg)
 
 ##### Study Plan
 
