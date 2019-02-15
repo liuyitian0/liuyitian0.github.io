@@ -104,3 +104,51 @@ tags:
 >  目前采用了  1分片 2 个副本的集群方式  ，配置如下:    
 >  在第一台和第三台上:    
 
+       <yandex>
+       <clickhouse_remote_servers>
+          <!-- 1分片2备份 -->
+          <cluster_1shards_2replicas>
+          <shard>
+             <internal_replication>false</internal_replication>
+             <replica>
+               <host>test-ai-etl-c1-1</host>
+               <port>9999</port>
+             </replica>
+             <replica>
+                <host>test-ai-etl-c1-3</host>
+                <port>9999</port>
+             </replica>
+          </shard>
+          </cluster_1shards_2replicas>
+       </clickhouse_remote_servers>
+       </yandex>    
+
+---- 测试用表 如下:    
+       create table default.test_local_s1r2 \    
+       (dt Date,id UInt8,name String) \    
+       ENGINE = MergeTree(dt, (id, dt), 8192);    
+       
+       CREATE TABLE test_local_s1r2_all AS test \    
+       ENGINE = Distributed(cluster_1shards_2replicas, default, test_local_s1r2, rand());    
+       
+       INSERT INTO test_local_s1r2_all SELECT * FROM test;    
+
+  查询 第一台上的本地表:    
+![](/img/in-post/clickhouse-engine-replication-5.jpg)    
+  可以看到 是单分片的全量数据    
+  查询 第三台上的本地表:   
+![](/img/in-post/clickhouse-engine-replication-6.jpg)    
+  也是 单分片 的全量数据     
+
+
+
+
+**   画外话 && FAQ (引用)
+
+> 四种复制模式:    
+>非复制表，internal_replication=false。插入到分布式表中的数据被插入到两个本地表中，如果在插入期间没有问题，则两个本地表上的数据保持同步。我们称之为“穷人的复制”，因为复制在网络出现问题的情况下容易发生分歧，没有一个简单的方法来确定哪一个是正确的复制。    
+>复制表，internal_replication=true。插入到分布式表中的数据仅插入到其中一个本地表中，但通过复制机制传输到另一个主机上的表中。因此两个本地表上的数据保持同步。这是推荐的配置。    
+>非复制表，internal_replication=true。数据只被插入到一个本地表中，但没有任何机制可以将它转移到另一个表中。因此，在不同主机上的本地表看到了不同的数据，查询分布式表时会出现非预期的数据。显然，这是配置ClickHouse集群的一种不正确的方法。    
+>复制表，internal_replication=false。数据被插入到两个本地表中，但同时复制表的机制保证重复数据会被删除。数据会从插入的第一个节点复制到其它的节点。其它节点拿到数据后如果发现数据重复，数据会被丢弃。这种情况下，虽然复制保持同步，没有错误发生。但由于不断的重复复制流，会导致写入性能明显的下降。所以这种配置实际应该是避免的，应该使用配置2。    
+
+*  目前clickhouse 对底层的复制模式不够清楚,不建议用于生产环境
