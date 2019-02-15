@@ -88,4 +88,7 @@ tags:
        INSERT INTO test_all SELECT * FROM test;    
        select * from  test_all;    
 
-![](/img/in-post/clickhouse-engine-replication.jpg)
+![](/img/in-post/clickhouse-engine-replication.jpg)    
+  在第一台机器上查 本地表:    
+![](/img/in-post/clickhouse-engine-replication-1.jpg)    
+
