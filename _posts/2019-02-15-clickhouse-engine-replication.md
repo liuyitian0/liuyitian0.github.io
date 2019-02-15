@@ -124,6 +124,7 @@ tags:
        </yandex>    
 
 ---- 测试用表 如下:    
+ 
        create table default.test_local_s1r2 \    
        (dt Date,id UInt8,name String) \    
        ENGINE = MergeTree(dt, (id, dt), 8192);    
@@ -143,7 +144,12 @@ tags:
 
 
 
-**   画外话 && FAQ (引用)
+
+
+
+
+
+**    画外话 && FAQ (引用)
 
 > 四种复制模式:    
 >非复制表，internal_replication=false。插入到分布式表中的数据被插入到两个本地表中，如果在插入期间没有问题，则两个本地表上的数据保持同步。我们称之为“穷人的复制”，因为复制在网络出现问题的情况下容易发生分歧，没有一个简单的方法来确定哪一个是正确的复制。    
