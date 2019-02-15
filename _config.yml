@@ -78,7 +78,7 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "动心忍性增益其所不能"
+sidebar-about-description: "动心忍性,曾益其所不能"
 sidebar-avatar: /img/avater-icon.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
