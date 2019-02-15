@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Zabbix Tools 监控,玎钉通知"
-subtitle: "python 实现"
+title: "Zabbix Tools 监控,钉钉通知"
+subtitle: "python script"
 author: "et"
 header-img: "img/post-bg-halting.jpg"
 header-mask: 0.4
