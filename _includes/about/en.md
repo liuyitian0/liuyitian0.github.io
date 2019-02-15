@@ -1,5 +1,4 @@
 
-> No regrets, no pestering, no waste <br>
 > View at ease, look at the mountains
 
 
