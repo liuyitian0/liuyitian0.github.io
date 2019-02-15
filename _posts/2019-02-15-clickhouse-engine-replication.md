@@ -14,3 +14,7 @@ tags:
 
 
 ![示例图1](https://raw.githubusercontent.com/liuyitian0/liuyitian0.github.io/master/img/in-post/post-kuaidi-2.jpg)
+
+
+
+![](/img/in-post/post-nextgen-web-pwa/PWAR-007.jpeg)
