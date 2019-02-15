@@ -2,7 +2,7 @@
 > View at ease, look at the mountains
 
 
-Hi, I am Et,   and I often appear in [blog] and [microblog] .
+Hi, I am Et,   and I often appear in [blog] and [microblog] .    
 My WeChat:    
 ![](/img/my-wechat.jpg)
 
