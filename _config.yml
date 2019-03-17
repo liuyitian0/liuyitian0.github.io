@@ -1,5 +1,5 @@
 # Site settings
-title: Et  Blog
+#title: Et  Blog
 SEOTitle: 裔天的博客 | Et Blog
 #header-img: img/home-bg.jpg
 header-img: img/langjitianya.jpg
@@ -73,7 +73,7 @@ netease_comment: false
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+#ga_domain: huangxuan.me
 
 
 
