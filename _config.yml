@@ -1,7 +1,8 @@
 # Site settings
 title: Et  Blog
 SEOTitle: 裔天的博客 | Et Blog
-header-img: img/home-bg.jpg
+#header-img: img/home-bg.jpg
+header-img: img/lajitianya.jpg
 email: iworkdream@126.com
 description: "嗯哼"
 keyword: "裔天, 一天, OneDay,裔天的博客, OneDay Blog "
