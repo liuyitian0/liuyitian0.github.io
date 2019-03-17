@@ -149,8 +149,8 @@
   position: fixed;
   display: flex;
   justify-content: space-between;
-  align-items: left;
-  color: white;
+  align-items: center;
+  color: black;
   line-height: 22px;
   padding: 18px 24px;
   bottom: 0px;
