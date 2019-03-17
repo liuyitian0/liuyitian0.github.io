@@ -14,7 +14,7 @@ description: "「 来了啊。」"
             {{ post.subtitle }}
         </h3>
         {% endif %}
-        <div class="post-content-preview"> aaaa
+        <div class="post-content-preview">
             {% if post.lang == 'en' %}
                 {{ post.content | strip_html | truncate:300 }}
             {% else %}
