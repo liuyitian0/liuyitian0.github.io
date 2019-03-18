@@ -14,7 +14,7 @@ tags:
 
 Presto  部署:   
 可以参照官网的部署，已经参数配置:   
-> https://prestodb.github.io/docs/current/installation/deployment.html
+> [https://prestodb.github.io/docs/current/installation/deployment.html](https://prestodb.github.io/docs/current/installation/deployment.html "With a Title")
 
 简单说下注意点:   
     1.  安装目录和 数据目录要分开，便于升级   
