@@ -35,12 +35,12 @@ Presto 0.217 需要 jdk1.8.0_15 在以上
        wget https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.tar.gz
 
 最终目录文件和配置情况如下:    
-![](/img/in-post/Presto-Deploying-1.jpg = 200x)      
-![](/img/in-post/Presto-Deploying-2.jpg = 200x)      
-![](/img/in-post/Presto-Deploying-3.jpg = 200x)      
-![](/img/in-post/Presto-Deploying-4.jpg = 100x)      
-![](/img/in-post/Presto-Deploying-5.jpg = 100x)      
-![](/img/in-post/Presto-Deploying-6.jpg = 100x)      
-![](/img/in-post/Presto-Deploying-7.jpg = 100x)      
+![](/img/in-post/Presto-Deploying-1.jpg = 50x)      
+![](/img/in-post/Presto-Deploying-2.jpg = 50x)      
+![](/img/in-post/Presto-Deploying-3.jpg = 50x)      
+![](/img/in-post/Presto-Deploying-4.jpg = 50x)      
+![](/img/in-post/Presto-Deploying-5.jpg = 50x)      
+![](/img/in-post/Presto-Deploying-6.jpg = 50x)      
+![](/img/in-post/Presto-Deploying-7.jpg = 50x)      
 
 
