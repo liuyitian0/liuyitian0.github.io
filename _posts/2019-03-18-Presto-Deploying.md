@@ -43,13 +43,15 @@ Presto 0.217 需要 jdk1.8.0_15 在以上
        mv presto-cli-0.188-executable.jar  presto    
        chmod 777 presto   
 执行    
-       ./presto --server localhost:8001 --catalog kafka --schema default    
+       ./presto --server localhost:8001 --catalog kafka --schema default     
+ 
 由于我本机端口8081 被占用,我在上面的config.properties 文件中改成了 8001,所以这里写8001    
 
  
-最终目录文件和配置情况如下:    
-![](/img/in-post/Presto-Deploying-1.jpg = 100x)      
-![](/img/in-post/Presto-Deploying-2.jpg = 100x)      
+最终目录文件和配置情况如下:     
+
+![](/img/in-post/Presto-Deploying-1.jpg = 100x150)      
+![](/img/in-post/Presto-Deploying-2.jpg = 100x150)      
 ![](/img/in-post/Presto-Deploying-3.jpg = 50x)      
 ![](/img/in-post/Presto-Deploying-4.jpg = 50x)      
 ![](/img/in-post/Presto-Deploying-5.jpg = 50x)      
