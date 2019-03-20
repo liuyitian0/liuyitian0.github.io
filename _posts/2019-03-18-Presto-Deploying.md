@@ -1,6 +1,6 @@
 ---
 layout: post
-title: " Presto 部署以及查询kafka "
+title: " Presto 部署 "
 subtitle: "分布式快速查询"
 author: "et"
 header-img: "img/post-bg-halting.jpg"
