@@ -52,10 +52,10 @@ Presto 0.217 需要 jdk1.8.0_15 在以上
 
 ![](/img/in-post/Presto-Deploying-1.jpg)      
 ![](/img/in-post/Presto-Deploying-2.jpg)      
-![](/img/in-post/Presto-Deploying-3.jpg = 50x)      
-![](/img/in-post/Presto-Deploying-4.jpg = 50x)      
-![](/img/in-post/Presto-Deploying-5.jpg = 50x)      
-![](/img/in-post/Presto-Deploying-6.jpg = 50x)      
-![](/img/in-post/Presto-Deploying-7.jpg = 50x)      
+![](/img/in-post/Presto-Deploying-3.jpg)      
+![](/img/in-post/Presto-Deploying-4.jpg)      
+![](/img/in-post/Presto-Deploying-5.jpg)      
+![](/img/in-post/Presto-Deploying-6.jpg)      
+![](/img/in-post/Presto-Deploying-7.jpg)      
 
 
