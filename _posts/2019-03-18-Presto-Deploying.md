@@ -93,3 +93,5 @@ hive.config.resources=/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.
 connector.name=jmx        
 
 
+连接到 hive ods库:    
+       ./presto --server localhost:8001 --catalog hive --schema ods
