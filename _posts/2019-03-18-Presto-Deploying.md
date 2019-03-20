@@ -36,7 +36,7 @@ Presto 0.217 需要 jdk1.8.0_15 在以上
 
 最终目录文件和配置情况如下:    
 
-![](/img/in-post/Presto-Deploying-1.jpg)      
+![](/img/in-post/Presto-Deploying-1.jpg = 200*300)      
 ![](/img/in-post/Presto-Deploying-2.jpg)      
 ![](/img/in-post/Presto-Deploying-3.jpg)      
 ![](/img/in-post/Presto-Deploying-4.jpg)      
