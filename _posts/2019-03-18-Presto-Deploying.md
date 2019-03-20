@@ -53,30 +53,30 @@ Presto 0.217 需要 jdk1.8.0_15 在以上
 ![](/img/in-post/Presto-Deploying-1.jpg)      
 ![](/img/in-post/Presto-Deploying-2.jpg)     
 
-coordinator=true    
-node-scheduler.include-coordinator=true     
-query.max-memory=4GB     
-query.max-memory-per-node=1GB    
-discovery-server.enabled=true    
-http-server.http.port=8001       
+coordinator=true      
+node-scheduler.include-coordinator=true       
+query.max-memory=4GB       
+query.max-memory-per-node=1GB      
+discovery-server.enabled=true      
+http-server.http.port=8001        
 discovery.uri=http://10.x.x.x:8001    
  
 ![](/img/in-post/Presto-Deploying-3.jpg)     
  
--server    
--Xmx16G    
--XX:+UseG1GC    
--XX:G1HeapRegionSize=32M    
--XX:+UseGCOverheadLimit     
--XX:+ExplicitGCInvokesConcurrent    
--XX:+HeapDumpOnOutOfMemoryError     
--XX:+ExitOnOutOfMemoryError      
+-server      
+-Xmx16G      
+-XX:+UseG1GC       
+-XX:G1HeapRegionSize=32M       
+-XX:+UseGCOverheadLimit       
+-XX:+ExplicitGCInvokesConcurrent        
+-XX:+HeapDumpOnOutOfMemoryError        
+-XX:+ExitOnOutOfMemoryError        
  
 ![](/img/in-post/Presto-Deploying-4.jpg)       
 
-node.environment=dw    
-node.id=hostname     
-node.data-dir=/data1/prestodb/data     
+node.environment=dw      
+node.id=hostname       
+node.data-dir=/data1/prestodb/data      
 
 ![](/img/in-post/Presto-Deploying-5.jpg)      
 
@@ -84,8 +84,8 @@ com.facebook.presto=INFO
 
 ![](/img/in-post/Presto-Deploying-6.jpg)       
 
-connector.name=hive-hadoop2     
-hive.metastore.uri=thrift://10.x.x.x:9083     
+connector.name=hive-hadoop2       
+hive.metastore.uri=thrift://10.x.x.x:9083        
 hive.config.resources=/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml     
 
 ![](/img/in-post/Presto-Deploying-7.jpg)     
