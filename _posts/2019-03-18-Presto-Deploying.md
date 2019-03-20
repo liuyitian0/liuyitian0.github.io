@@ -95,4 +95,4 @@ connector.name=jmx
 
 连接到 hive ods库:    
 
-        ./presto --server localhost:8001 --catalog hive --schema ods
+       ./presto --server localhost:8001 --catalog hive --schema ods
